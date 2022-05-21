@@ -21,7 +21,8 @@
 		"eamodio.gitlens",
 		"deerawan.vscode-whitespacer",
 		"aaron-bond.better-comments",
-		"ms-vscode.makefile-tools"
+		"ms-vscode.makefile-tools",
+		"augustocdias.tasks-shell-input"
 	],
 
     // Use 'forwardPorts' to make a list of ports inside the container available locally.

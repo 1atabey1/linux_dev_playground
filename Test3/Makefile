@@ -18,7 +18,6 @@ DEPS := $(OBJS:.o=.d)
 
 # Every folder in ./src will need to be passed to GCC so that it can find header files
 INC_DIRS := $(shell find $(SRC_DIRS) -type d)
-INC_DIRS += /usr/include/python3.8
 # Add a prefix to INC_DIRS. So moduleA would become -ImoduleA. GCC understands this -I flag
 INC_FLAGS := $(addprefix -I,$(INC_DIRS))
 
@@ -26,8 +25,12 @@ INC_FLAGS := $(addprefix -I,$(INC_DIRS))
 # These files will have .d instead of .o as the output.
 CPPFLAGS := $(INC_FLAGS) -MMD -MP
 
+CPPFLAGS += $(shell python3-config --embed --cflags)
+LDFLAGS += $(shell python3-config --embed --ldflags)
+
 # The final build step.
 $(BUILD_DIR)/$(TARGET_EXEC): $(OBJS)
+	echo "ldflags: $(LDFLAGS)"
 	$(CC) $(OBJS) -o $@ $(LDFLAGS)
 
 # Build step for C source
