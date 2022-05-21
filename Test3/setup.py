@@ -9,7 +9,7 @@ module1 = Extension('testpkg',
                     # include_dirs = ['/usr/local/include'],
                     # libraries = ['tcl83'],
                     # library_dirs = ['/usr/local/lib'],
-                    sources=os.listdir(path))
+                    sources=[os.path.join(path,x) for x in os.listdir(path) if x.endswith(".c")])
 
 setup(name='TestPkg',
       version='1.1',

@@ -1,3 +1,4 @@
 # My little Playground
 
-Open in vscode
+1. Open in vscode
+2. Have fun

@@ -1,5 +1,5 @@
 # Thanks to Job Vranish (https://spin.atomicobject.com/2016/08/26/makefile-c-projects/)
-TARGET_EXEC := final_program
+TARGET_EXEC := my_little_test
 
 BUILD_DIR := ./build
 SRC_DIRS := ./src
@@ -25,6 +25,7 @@ INC_FLAGS := $(addprefix -I,$(INC_DIRS))
 # These files will have .d instead of .o as the output.
 CPPFLAGS := $(INC_FLAGS) -MMD -MP
 
+# Add flags necessary for python embedding
 CPPFLAGS += $(shell python3-config --embed --cflags)
 LDFLAGS += $(shell python3-config --embed --ldflags)
 
