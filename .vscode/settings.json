@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "python.h": "c"
+    },
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/workspaces/linux_dev_playground/build",
+            "binaryPath": "/workspaces/linux_dev_playground/build/final_program",
+            "binaryArgs": []
+        }
+    ]
+}
